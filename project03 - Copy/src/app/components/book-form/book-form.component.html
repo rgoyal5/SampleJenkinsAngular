@@ -1,0 +1,70 @@
+<h3>
+  {{isEdit?"Edit":"New"}} Book
+</h3>
+<form name=form #f=ngForm novalidate (ngSubmit)="f.form.valid && saveBook()">
+  <table>
+    <tr>
+      <th>Book#</th>
+      <td>
+        <input type="number" name="bcode" [(ngModel)]="book.bcode" *ngIf="!isEdit" />
+        <span *ngIf="isEdit">{{book.bcode}}</span>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Title</th>
+      <td>
+        <input type="text" name="title" [(ngModel)]="book.title" #title=ngModel required minlength="5" maxlength="40" />
+        <ul [hidden]=title.valid>
+          <li [hidden]=title.errors.required>Cannot Be Empty</li>
+          <li [hidden]=titile.errors.minlength>Cannot be less than 5 charaters</li>
+          <li [hidden]=title.errors.maxlength>Cannot be more than 40 characters</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Price</th>
+      <td>
+        <input type="number" name="price" [(ngModel)]="book.price"/>
+      </td>
+    </tr>
+
+    <tr>
+      <th>Category</th>
+      <td>
+        <select [(ngModel)]="book.category" name="category" #category=ngModel required>
+          <option value="">-----Select------</option>
+          <option value="Novel">Novel</option>
+          <option value="TextBook">TextBook</option>
+          <option value="Magazine">Magazine</option>
+          <option value="Weekly">Weekly</option>
+        </select>
+        <ol [hidden]=category.valid>
+          <li>Please select a category</li>
+        </ol>
+
+      </td>
+    </tr>
+
+    <tr>
+      <th>Type</th>
+      <td>
+        <select [(ngModel)]="book.type" name="btype" #bookType=ngModel required>
+          <option value="">-----Select------</option>
+          <option value="HardCover">HardCover</option>
+          <option value="PaerBack">PaperBack</option>
+          <option value="Digital">Digital</option>
+        </select>
+        <ol [hidden]=bookType.valid>
+          <li>Please select one from list</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2" style="text-align:right">
+        <button>Save</button>
+      </td>
+    </tr>
+  </table>
+</form>

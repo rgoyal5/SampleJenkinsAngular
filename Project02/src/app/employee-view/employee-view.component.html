@@ -1,0 +1,13 @@
+<h3>Employee Details</h3>
+
+
+<table style="width:100%">
+  <tr>
+    <td><strong>Employee#</strong></td><td>{{employee.id | number:'2.0'}}</td></tr>
+   <tr><td><strong>Name</strong></td><td>{{employee.name | uppercase}}</td></tr>
+    <tr><td><strong>Basic</strong></td><td>{{employee.basic | currency:'INR':true:'5.2'}}</td></tr>
+    <tr><td><strong>HRA</strong></td><td>{{employee.hra | percent: '2.2'}}</td></tr>
+    <tr><td><strong>Department</strong></td><td>{{employee.department | titlecase}}</td></tr>
+ 
+
+</table>

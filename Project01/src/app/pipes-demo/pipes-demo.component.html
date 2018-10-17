@@ -1,0 +1,49 @@
+<h2>Pipes Demo</h2>
+<h3>Original String</h3>
+<p>{{strData}}</p>
+
+<h3>String Data</h3>
+<p>{{strData | uppercase}}</p>
+<p>{{strData | lowercase}}</p>
+<p>{{strData | titlecase}}</p>
+
+<h3>Original Number</h3>
+<p>{{numData}}</p>
+
+<h3>Decimal Pipe</h3>
+<p>{{numData | number:'8.0'}}</p>
+<p>{{numData | number:'8.0-4'}}</p>
+<p>{{numData | number:'5.5'}}</p>
+
+<h3>Currency Pipes</h3>
+<p>{{numData | currency:'INR'}}</p>
+<p>{{numData | currency:'GBP'}}</p>
+<p>{{numData | currency:'USD'}}</p>
+<p>{{numData | currency:'EUR'}}</p>
+<p>{{numData | currency:'AUD'}}</p>
+
+
+<h3>Percentage Pipe</h3>
+<p>{{numData | percent}}</p>
+<p>{{numData | percent : '7.0-6'}}</p>
+
+<h3>Date Pipes</h3>
+<p>{{dateData | date:'dd-MM-yyyy'}}</p>
+<p>{{dateData | date:'dd/MM/yyyy'}}</p>
+<p>{{dateData | date:'dd, MMM-yyyy'}}</p>
+<p>{{dateData | date:'hh:mm:ss a'}}</p>
+
+<h3>Custom Pipe</h3>
+<p>12345 in words <strong>{{numData | toWords}}
+
+</strong></p>
+
+<h3>Original Array</h3>
+<p>{{array}}</p>
+
+<h3>Even Elements</h3>
+<p>{{array | multipleOf:'2'}}</p>
+
+<h3>Seven Multiples</h3>
+<p>{{array | multipleOf:'7'}}</p>
+

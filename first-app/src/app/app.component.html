@@ -1,0 +1,47 @@
+<p>
+  custom-app works!
+</p>
+
+<div>
+  <h1> hello{{name}}</h1>
+  <h1>{{showMsg()}}</h1>
+
+  <div *ngIf="b>a">
+    <h4>This is conditional o/p</h4>
+  </div>
+
+  <div [ngSwitch]="a">
+    <div *ngSwitchCase='10'>Value is 10</div>
+    <div *ngSwitchCase='20'>Value is 20</div>
+    <div *ngSwitchCase='30'>Value is 30</div>
+    <div *ngSwitchCase='40'>Value is 40</div>
+    <div *ngSwitchDefault>Value is something else</div>
+  </div>
+
+  <div *ngFor="let x of marks">
+    <div><h2>{{x}}</h2></div>
+  </div>
+
+  <ul>
+    <h3>Number list</h3>
+    <li *ngFor="let x of marks">{{x}}</li>
+  </ul>
+
+  <div>
+    <table border="1" width="80%">
+      <th>NAME</th>
+      <th>AGE</th>
+      <th>BASIC</th>
+      <tbody>
+        <tr *ngFor="let emp: of employees;let i=index">  
+          <td>{{i+1}}</td>
+          <td [style.background-color]="'yellow'">{{emp.name}}</td>
+          <td>{{emp.age}}</td>
+          <td>{{emp.basic}}</td>  
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+</div>

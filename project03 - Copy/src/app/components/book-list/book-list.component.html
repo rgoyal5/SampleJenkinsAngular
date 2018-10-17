@@ -1,0 +1,21 @@
+<h2>Book List</h2>
+
+<table>
+  <thead><tr>
+    <th>Book#</th>
+    <th>Title</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Type</th>
+    </tr>
+  </thead>
+  <tbodY>
+    <tr *ngFor="let b of books" (click)="showBook(b.bcode)">
+      <td>{{b.bcode}}</td>
+      <td>{{b.title}}</td>
+      <td>{{b.price}}</td>
+      <td>{{b.category}}</td>
+      <td>{{b.type}}</td>
+    </tr>
+  </tbodY>
+</table>
